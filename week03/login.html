@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 로그인 </title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div>
@@ -12,13 +13,13 @@
             <img src="./images/숙멋사로고명1.svg" />
         </header>
         <form name="login" method="post">
-            <input type="text" name="username" placeholder="아이디" />
-            <input type="password" name="password" placeholder="비밀번호" />
+            <input id="id" type="text" name="username" placeholder="아이디" />
+            <input id="password" name="password" name="password" placeholder="비밀번호" />
             <button type="submit">로그인</button>
         </form>
-        <aside>
-            <p>아직 회원이 아니신가요?</p>
-            <a href="./signup.html" title="회원가입">회원가입하기</a>
+        <aside class="ask_member">
+            <p id="ask_member">아직 회원이 아니신가요?</p>
+            <a id="to_signup" href="./signup.html" title="회원가입">회원가입하기</a>
         </aside>
     </div>
     
