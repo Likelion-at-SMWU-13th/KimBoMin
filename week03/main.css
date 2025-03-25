@@ -1,0 +1,41 @@
+body {
+    background-color: #1c1c1c;
+    padding: 10vh 100px;
+  }
+  
+  /* header */
+  header {
+    display: flex;
+  }
+  
+  #logo_sookmutsa {
+    width: 145px;
+  }
+  
+  nav {
+    position: relative;
+    left: calc(100vw - 450px);
+  }
+  
+  #mypage {
+    width: 35px;
+    margin-right: 10px;
+  }
+  
+  #logout {
+    width: 35px;
+  }
+  
+  /* article */
+  h1 {
+    color: #fff;
+    font-family: "YiSunShinDotumM";
+    font-size: 30px;
+  }
+  
+  p {
+    color: #97afe3;
+    font-family: "YiSunShinDotumM";
+    font-size: 25px;
+  }
+  
