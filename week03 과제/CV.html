@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bomin Kim | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#career">Career</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="section" id="home">
+    <div class="home-container">
+      <div class="intro-text">
+        <h1>Bomin Kim</h1>
+        <p>꿈을 향해 달려가는 개발자</p>
+      </div>
+      <img src="example.webp" alt="프로필 사진" class="profile-img">
+    </div>
+  </section>
+
+  <section class="section" id="career">
+    <h2>Career</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="example.webp" alt="ISM" />
+        <p class="desc">세네갈 ISM 분들의 통역을 맡았습니다.</p>
+      </div>
+      <div class="card">
+        <img src="example.webp" alt="SWITCH" />
+        <p class="desc">3D 멀티플레이 RPG 게임을 만들었어요!</p>
+      </div>
+      <div class="card">
+        <img src="example.webp" alt="한볕회화" />
+        <p class="desc">무척 뜻깊은 영어 멘토 경험이었습니다.</p>
+      </div>
+      <div class="card">
+        <img src="example.webp" alt="여성의 날" />
+        <p class="desc">각국 대사 의견 보조 통역을 도왔습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="example.webp" alt="이미지1">
+      <img src="example.webp" alt="이미지2">
+      <img src="example.webp" alt="이미지3">
+    </div>
+    <ul class="about-text">
+      <li>숙명여대 소프트웨어학과 & 컴퓨터과학전공</li>
+      <li>CREA+URS 게임 개발 활동</li>
+      <li>그림과 악기 연주를 좋아해요!</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="이름" required>
+      <input type="tel" placeholder="전화번호" required>
+      <textarea placeholder="내용을 입력해주세요." required></textarea>
+      <button type="submit">제출</button>
+    </form>
+  </section>
+
+  <script src="CV.js"></script>
+</body>
+</html>
