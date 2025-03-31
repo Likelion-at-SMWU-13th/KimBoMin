@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>mypage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="mypage.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#career1">Career</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="section" id="home">
+    <div class="home-flex">
+      <div class="home-text">
+        <h1>Bomin Kim</h1>
+        <p>늘 노력하고 성장하는 사람이 되고 싶어요😊</p>
+      </div>
+      <div class="home-image">
+        <img src="mypic.jpg" alt="내 사진">
+      </div>
+    </div>
+  </section>  
+
+  <section class="section" id="career1">
+    <h2>01 Career</h2>
+    <div class="career-block">
+      <h3>Education</h3>
+      <p>2023.02 현대고등학교(서울) 졸업</p>
+      <p>2023.03 ~ 숙명여자대학교 컴퓨터과학전공 23학번</p>
+
+      <h3>Activities</h3>
+      <p><strong>2024.04 ~ 숙명통역봉사단 23기</strong></p>
+      <ul>
+        <li>숙명여대-세네갈 ISM 교류행사 통역</li>
+        <li>한별회화캠프 영어 멘토</li>
+        <li>세계 여성의 날 통역봉사</li>
+      </ul>
+      <p><strong>2024.07 ~ 숙명여대 3기 예비창업팀(CREA+URS)</strong><br>
+        숙명여대 창업공모전 SWITCH 대상 (2024.09.06)</p>
+      <p><strong>2025.03 ~ 멋쟁이사자처럼 13기</strong></p>
+    </div>
+  </section>
+
+  <section class="section" id="career2">
+    <h2>01 Career</h2>
+    <div class="career-gallery career-grid-2x2">
+      <div class="career-item">
+        <img src="ISM.jpg" alt="ISM 사진">
+        <p>세네갈 ISM 분들의 통역을 맡았습니다.</p>
+      </div>
+      <div class="career-item">
+        <img src="switch.jpg" alt="SWITCH">
+        <p>3D 멀티플레이 RPG 게임을 만들었어요!</p>
+      </div>
+      <div class="career-item">
+        <img src="한별회화.jpg" alt="한별회화">
+        <p>무척 뜻깊은 영어 멘토 경험이었습니다.</p>
+      </div>
+      <div class="career-item">
+        <img src="여성의날.jpg" alt="여성의날">
+        <p>각국 대사 의견 의전 통역을 도왔습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>02 About Me</h2>
+
+    <div class="gallery-2x2">
+      <img src="후쿠오카.jpg" alt="후쿠오카">
+      <img src="대만.jpg" alt="대만">
+      <img src="상하이.jpg" alt="상하이">
+      <img src="말레이시아.jpg" alt="말레이시아">
+    </div>
+    <p class="gallery-caption">저는 여행을 좋아해요!</p>
+
+    <p class="gallery-caption">작년엔 후쿠오카와 대만, 올해는 상하이와 말레이시아를 다녀왔어요.</p>
+
+    <p class="gallery-caption">올해는 호주에 가보는 것이 목표예요 :)</p>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>03 Contact</h2>
+    <div class="contact-info">
+      <p><strong>Phone</strong> <a href="tel:01086000448">010-8600-0448</a></p>
+      <p><strong>Email</strong> <a href="mailto:bluebomin@sookmyung.ac.kr">bluebomin@sookmyung.ac.kr</a></p>
+      <p><strong>GitHub</strong> <a href="https://github.com/bluebomin" target="_blank">github.com/bluebomin</a></p>
+    </div>
+
+    <div class="contact-form-box">
+      <h3>문의하기</h3>
+      <p class="subtext">저에 대해 궁금한 사항들을 남겨 주세요!</p>
+      <form id="contactForm">
+        <div class="row">
+          <input type="text" placeholder="이름" required>
+          <input type="tel" placeholder="전화번호" required>
+        </div>
+        <textarea placeholder="내용을 입력해 주세요." required></textarea>
+        <button type="submit">제출하기</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="mypage.js"></script>
+</body>
+</html>
