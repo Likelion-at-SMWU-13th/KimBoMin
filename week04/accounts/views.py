@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import SignupForm
-from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 
 def signup(request):
     if request.method == "POST":
@@ -8,7 +8,6 @@ def signup(request):
         if form.is_valid():
             form.save()
             return redirect("login")
-
     else:
         form = SignupForm()
 
@@ -25,3 +24,11 @@ def login(request):
             return redirect("main")
     
     return render(request, "login.html")
+
+def main(request):
+    return render(request, "main.html")
+
+def logout(request):
+    if request.user.is_authenticated:
+        auth_logout(request)
+        return redirect("login")
