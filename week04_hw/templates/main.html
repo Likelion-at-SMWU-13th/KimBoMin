@@ -1,24 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
     <title>🦁 메인</title>
   </head>
   <body>
     <header>
       <a href="main.html">
-        <img id="logo_sookmutsa" src="./images/숙멋사로고명1.svg"
+        <img id="logo_sookmutsa" src="{% static 'images/숙멋사로고명 1.svg' %}"
       /></a>
       <nav>
-        <a href="mypage.html"><img id="mypage" src="./images/mypage.svg"/></a>
-        <a href="login.html"><img id="logout" src="./images/logout.svg" /></a>
+        <a href="mypage.html"><img id="mypage" src="{% 'images/mypage.svg' %}"/></a>
+        <a href="login.html"><img id="logout" src="{% static 'images/logout.svg' %}" /></a>
       </nav>
     </header>
     <article>
-      <h1>로그인에 성공했습니다.</h1>
-      <p>김사자님, 환영합니다!</p>
+      {% if user.is_authenticated %}
+        <h1>로그인에 성공했습니다.</h1>
+        <p> {{user.first_name}}님, 환영합니다!</p>
+      {% else %}
+        <p>로그인을 해주세요요</p>
+      { % endif %}
     </article>
   </body>
 </html>
