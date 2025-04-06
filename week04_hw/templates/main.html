@@ -15,7 +15,7 @@
       /></a>
       <nav>
         <a href="mypage.html"><img id="mypage" src="{% 'images/mypage.svg' %}"/></a>
-        <a href="login.html"><img id="logout" src="{% static 'images/logout.svg' %}" /></a>
+        <a href="{% url 'logout' %}"><img id="logout" src="{% static 'images/logout.svg' %}" /></a>
       </nav>
     </header>
     <article>
