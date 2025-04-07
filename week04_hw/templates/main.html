@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+    <title>🦁 메인</title>
+</head>
+<body>
+    <header>
+    <a href="main.html">
+        <img id="logo_sookmutsa" src="{% static 'images/숙멋사로고명 1.svg' %}"
+    /></a>
+    <nav>
+        <a href="mypage.html"><img id="mypage" src="{% static 'images/mypage.svg' %}" /></a>
+        <a href="{% url 'logout' %}"><img id="logout" src="{% static 'images/logout.svg' %}" /></a>
+    </nav>
+    </header>
+    <article>
+        {% if user.is_authenticated %}
+            <h1>로그인에 성공했습니다.</h1>
+            <p>{{user.first_name}}님, 환영합니다!</p>
+        {% else %}
+            <p>로그인을 해주세요</p>
+        {% endif %}
+    </article>
+</body>
+</html>
