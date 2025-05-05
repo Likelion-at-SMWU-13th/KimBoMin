@@ -1,0 +1,7 @@
+<h1>일기 목록</h1>
+<ul>
+  {% for diary in object_list %}
+    <li><strong>{{ diary.title }}</strong> - {{ diary.created_at }}</li>
+    <p>{{ diary.content }}</p>
+  {% endfor %}
+</ul>
