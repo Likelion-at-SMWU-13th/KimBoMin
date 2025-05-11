@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Delete{% endblock %}
+
+{% block content %}
+<h1>Post 삭제 화면</h1>
+<p>정말 삭제하시겠습니까?</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">삭제</button>
+    <a href="{% url 'posts:post-detail' post.id %}">취소</a>
+</form>
+{% endblock %}
