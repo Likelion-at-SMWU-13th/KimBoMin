@@ -1,29 +1,0 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
-    <title>🦁 로그인</title>
-</head>
-<body>
-    <div>
-    <header>
-        <img src="{% static 'images/숙멋사로고1.svg' %}" />
-        <img src="{% static 'images/숙멋사로고명1.svg' %}" />
-    </header>
-    <form name="login" method="post">
-        {% csrf_token %}
-        <input id="id" type="text" name="username" placeholder="아이디" />
-        <input id="password" type="password" name="password" placeholder="비밀번호"/>
-        <button class="login_btn" type="submit">로그인</button>
-    </form>
-    <aside class="ask_member">
-        <p id="ask_member">아직 회원이 아니신가요?</p>
-        <a id="to_signup" href="{% url 'signup' %}" title="회원가입">회원가입하기</a>
-    </aside>
-    </div>
-</body>
-</html>
