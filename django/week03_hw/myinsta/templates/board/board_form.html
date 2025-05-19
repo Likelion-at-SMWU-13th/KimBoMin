@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>게시글 작성</h1>
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">작성 완료</button>
+</form>
+
+<a href="{% url 'board:list' %}">← 목록으로</a>
+{% endblock %}
