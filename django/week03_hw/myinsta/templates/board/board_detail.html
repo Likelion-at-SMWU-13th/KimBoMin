@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>작성자: {{ object.writer }} | 작성일: {{ object.created_at }}</p>
+<p>{{ object.content }}</p>
+
+{% if object.image %}
+  <img src="{{ object.image.url }}" width="300" />
+{% endif %}
+
+<hr>
+
+<a href="{% url 'board:edit' object.pk %}">수정</a> |
+<a href="{% url 'board:delete' object.pk %}">삭제</a> |
+<a href="{% url 'board:list' %}">← 목록</a>
+{% endblock %}
