@@ -1,6 +1,15 @@
-from django.apps import AppConfig
+from rest_framework import serializers
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
-class UsersConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'users'
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email', 'password']
+        extra = {
+            'password': {'write_only': True} 
+        }
+
+    def create(self, validated_data):
+        return User.objects.create_user(**validated_data)
