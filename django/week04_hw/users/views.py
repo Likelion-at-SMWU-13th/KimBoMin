@@ -39,3 +39,14 @@ def post_delete_view(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return Response({'message': '글 삭제 완료'}, status=status.HTTP_204_NO_CONTENT)
+
+from .serializers import UserSerializer 
+
+@api_view(['POST'])
+def user_create_view(request):
+    serializer = UserSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({'message': '회원가입 완료'}, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=400)
+
