@@ -22,8 +22,11 @@ public class StudentRepository {
         return Optional.ofNullable(studentMap.get(studentID));
     }
 
-    public void update(Long studentID, StudentDTO student) {
-        studentMap.put(studentID, student);
+    public void update(Long id, StudentDTO student) {
+        if (!id.equals(student.getStudentID())) {
+            studentMap.remove(id);
+        }
+        studentMap.put(student.getStudentID(), student);
     }
 
     public void delete(Long studentID) {
