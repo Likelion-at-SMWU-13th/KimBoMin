@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+<h1> Products </h1>
+<h2> View Products</h2>
+<table>
+  <tr>
+    <th>PRODUCT NAME</th>
+    <th>PRODUCT PRICE</th>
+  </tr>
+  <tr th:each="p: ${products}">
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.price}"></td>
+  </tr>
+</table>
+</body>
+</html>
