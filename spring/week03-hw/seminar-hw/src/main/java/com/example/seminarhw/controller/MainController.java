@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class BookController {
+public class MainController {
 
     @Autowired
     private BookService bookService;
