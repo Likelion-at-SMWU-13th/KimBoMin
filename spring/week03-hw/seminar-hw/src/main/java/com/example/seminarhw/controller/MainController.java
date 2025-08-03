@@ -8,6 +8,6 @@ public class MainController {
 
     @RequestMapping("/books")
     public String books(){
-        return "books";
+        return "books.html";
     }
 }
