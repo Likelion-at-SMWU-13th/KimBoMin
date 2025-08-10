@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>도서 목록</title></head>
+<body>
+<h1>도서 목록</h1>
+<form action="/books" method="post">
+    제목: <input name="title"><br>
+    저자: <input name="author"><br>
+    가격: <input type="number" name="price"><br>
+    <button type="submit">등록</button>
+</form>
+<hr>
+<ul>
+    <li th:each="b : ${books}">
+        <span th:text="${b.title}">title</span> -
+        <span th:text="${b.author}">author</span> /
+        <span th:text="${b.price}">price</span>원
+    </li>
+</ul>
+</body>
+</html>
