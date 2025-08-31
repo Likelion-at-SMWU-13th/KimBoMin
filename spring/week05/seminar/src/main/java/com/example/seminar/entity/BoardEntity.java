@@ -1,29 +1,22 @@
 package com.example.seminar.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
+import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "board")
-@Getter
-@Setter
-@NoArgsConstructor
+@Entity @Table(name = "boards")
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class BoardEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false, length = 100)
     private String name;
 
-    @OneToMany(
-            targetEntity = PostEntity.class,
-            fetch = FetchType.LAZY,
-            mappedBy = "boardEntity"
-    )
-    private List<PostEntity> postEntityList = new ArrayList<>();
-}
+    @Column(length = 255)
+    private String description;
 
+    private LocalDateTime createdAt;
+
+    @PrePersist void prePersist(){ if (createdAt == null) createdAt = LocalDateTime.now(); }
+}
