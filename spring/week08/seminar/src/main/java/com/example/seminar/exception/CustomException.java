@@ -1,4 +1,4 @@
-package com.example.seminar.Exception;
+package com.example.seminar.exception;
 
 public class CustomException extends RuntimeException {
 

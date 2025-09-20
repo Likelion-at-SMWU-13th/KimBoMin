@@ -3,8 +3,9 @@ package com.example.seminar.service;
 import com.example.seminar.dto.SignupRequest;
 import com.example.seminar.entity.User;
 import com.example.seminar.repository.UserRepository;
+import com.example.seminar.exception.CustomException;
 import com.example.seminar.exception.HttpStatus;
-import Exception.CustomException;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -35,3 +36,4 @@ public class UserService {
         userRepository.save(user);
     }
 }
+

@@ -1,9 +1,9 @@
-package com.example.seminar.Exception;
+package com.example.seminar.exception;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import static com.example.seminar.Exception.HttpStatus.INTERNAL_SERVER_ERROR;
+import static com.example.seminar.exception.HttpStatus.INTERNAL_SERVER_ERROR;
 
 @RequestMapping("/api/controller")
 

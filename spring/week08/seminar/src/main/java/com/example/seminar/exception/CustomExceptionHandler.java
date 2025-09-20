@@ -1,4 +1,4 @@
-package com.example.seminar.Exception;
+package com.example.seminar.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
@@ -16,7 +16,6 @@ public class CustomExceptionHandler {
 
     private final Logger LOGGER = LoggerFactory.getLogger(CustomExceptionHandler.class);
 
-    // 1. CustomException 처리
     @ExceptionHandler(value = CustomException.class)
     public ResponseEntity<Map<String, String>> handleCustomException(CustomException e, HttpServletRequest request) {
         LOGGER.error("CustomException 발생, URI: {}, 메시지: {}", request.getRequestURI(), e.getMessage());
@@ -31,7 +30,6 @@ public class CustomExceptionHandler {
                 .body(map);
     }
 
-    // 2. DTO 유효성 검증 실패 처리
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
