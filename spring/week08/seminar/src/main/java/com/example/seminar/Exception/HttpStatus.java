@@ -1,4 +1,4 @@
-package com.example.seminar.exception;
+package com.example.seminar.Exception;
 
 public enum HttpStatus {
 
