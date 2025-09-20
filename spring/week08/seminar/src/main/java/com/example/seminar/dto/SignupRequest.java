@@ -1,5 +1,6 @@
 package com.example.seminar.dto;
 
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -7,6 +8,7 @@ import jakarta.validation.constraints.Size;
 public class SignupRequest {
 
     @NotBlank(message = "아이디는 공백일 수 없습니다.")
+    @Pattern(regexp = "^[^\\s]+$", message = "아이디에는 공백을 포함할 수 없습니다.")
     private String username;
 
     @Email(message = "이메일 형식이 올바르지 않습니다.")
