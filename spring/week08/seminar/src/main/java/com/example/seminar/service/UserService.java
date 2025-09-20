@@ -1,8 +1,8 @@
 package com.example.seminar.service;
 
 import com.example.seminar.dto.SignupRequest;
-import com.example.seminar.exception.HttpStatus;
-import Exception.CustomException;
+import com.example.seminar.Exception.HttpStatus;
+import com.example.seminar.Exception.CustomException;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
