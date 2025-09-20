@@ -1,4 +1,8 @@
 package com.example.seminar.entity;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 import jakarta.persistence.*;
 import lombok.*;
