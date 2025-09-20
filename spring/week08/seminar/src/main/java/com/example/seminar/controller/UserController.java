@@ -1,24 +1,26 @@
-package com.example.seminar.controller;
+package com.example.seminar.entity;
 
-import com.example.seminar.dto.SignupRequest;
-import com.example.seminar.service.UserService;
-import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import jakarta.persistence.*;
+import lombok.*;
 
-@RestController
-@RequestMapping("/api/users")
-public class UserController {
+@Entity
+@Table(name = "users")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
+public class User {
 
-    private final UserService userService;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    @Column(unique = true, nullable = false, length = 20)
+    private String username;
 
-    @PostMapping("/signup")
-    public ResponseEntity<String> signup(@Valid @RequestBody SignupRequest request) {
-        userService.signup(request);
-        return ResponseEntity.ok("회원가입 성공!");
-    }
+    @Column(nullable = false, length = 50)
+    private String email;
+
+    @Column(nullable = false)
+    private String password;
 }
