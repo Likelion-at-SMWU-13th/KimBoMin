@@ -16,7 +16,7 @@ public class CustomExceptionHandler {
 
     private final Logger LOGGER = LoggerFactory.getLogger(CustomExceptionHandler.class);
 
-    @ExceptionHandler(value = CustomException.class)
+    @ExceptionHandler(CustomException.class)
     public ResponseEntity<Map<String, String>> handleCustomException(CustomException e, HttpServletRequest request) {
         LOGGER.error("CustomException 발생, URI: {}, 메시지: {}", request.getRequestURI(), e.getMessage());
 
