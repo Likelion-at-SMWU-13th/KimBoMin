@@ -1,6 +1,4 @@
-package Exception;
-
-import com.example.seminar.exception.HttpStatus;
+package com.example.seminar.exception;
 
 public class CustomException extends RuntimeException {
 
