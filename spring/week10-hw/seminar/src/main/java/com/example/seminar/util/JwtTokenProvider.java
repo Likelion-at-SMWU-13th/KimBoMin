@@ -2,10 +2,10 @@ package com.example.seminar.util;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.security.Key;
 import java.util.Date;
 
@@ -25,7 +25,8 @@ public class JwtTokenProvider {
 
     @PostConstruct
     public void init() {
-        key = Keys.hmacShaKeyFor(secretKey.getBytes());
+        // secret 길이는 충분히 길어야 함(최소 256bit). application.yml에 긴 값 사용!
+        this.key = Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 
     public String createAccessToken(String email, String role) {
@@ -36,18 +37,18 @@ public class JwtTokenProvider {
         return createToken(email, null, refreshTokenValidity);
     }
 
-    private String createToken(String email, String role, long validity) {
+    private String createToken(String email, String role, long validityMs) {
         Date now = new Date();
-        Date exp = new Date(now.getTime() + validity);
+        Date exp = new Date(now.getTime() + validityMs);
 
-        JwtBuilder builder = Jwts.builder()
+        JwtBuilder b = Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(now)
                 .setExpiration(exp)
                 .signWith(key, SignatureAlgorithm.HS256);
 
-        if (role != null) builder.claim("role", role);
-        return builder.compact();
+        if (role != null) b.claim("role", role);
+        return b.compact();
     }
 
     public boolean validate(String token) {
